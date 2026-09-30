@@ -1,0 +1,32 @@
+# XcodeGen spec of the example app (https://github.com/yonaskolb/XcodeGen): `xcodegen generate` in this folder.
+name: YatmoExample
+options:
+  bundleIdPrefix: com.yatmo.test
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+packages:
+  YatmoSDK:
+    path: ../
+targets:
+  YatmoExample:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+    dependencies:
+      - package: YatmoSDK
+        product: YatmoSDK
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: Yatmo SDK example
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+    settings:
+      base:
+        # Registered as an app id on the Test licence (see MOBILE-SDK-PROGRESS.md, step 1).
+        PRODUCT_BUNDLE_IDENTIFIER: com.yatmo.test.ios
+        CODE_SIGNING_ALLOWED: "NO"
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1"
