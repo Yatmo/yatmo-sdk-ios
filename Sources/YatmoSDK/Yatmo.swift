@@ -1,7 +1,7 @@
 import Foundation
 
 /// Version sent in the X-Yatmo-SDK header. Keep in sync with the Git tag.
-public let yatmoSdkVersion = "1.0.0"
+public let yatmoSdkVersion = "1.0.1"
 
 /// Countries served by the Yatmo API. The raw value is the subdomain: `https://{country}.yatmo.com/`.
 public enum YatmoCountry: String, CaseIterable, Codable, Sendable {
